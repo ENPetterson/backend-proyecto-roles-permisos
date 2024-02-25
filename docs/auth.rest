@@ -8,7 +8,7 @@ Content-Type: application/json
     "password": "roberto123"
 }
 
-### Login
+### Login con Sanctum
 
 POST http://127.0.0.1:8000/api/v1/auth/login
 Accept: application/json
@@ -19,12 +19,28 @@ Content-Type: application/json
     "password": "roberto123"
 }
 
-### Login
+### Login con Passport
+
+POST http://127.0.0.1:8000/api/passport/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "roberto@gmail.com",
+    "password": "roberto123"
+}
+
+### Perfil con Sanctum
 
 GET http://127.0.0.1:8000/api/v1/auth/profile
 Accept: application/json
 Authorization: Bearer 2|xaqAUASgYb9hEK76wrxKVYtx5oscHTTfhuf8KxdY8d82b023
 
+### Perfil con Passport
+
+GET http://127.0.0.1:8000/api/passport/profile
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDJjNDI5OTgxNTM0ZWI1NjBiYzFhMmYwZTU0MGI3NzU4NmNjYWQ0YzAyYjRkMzJmYmM0ODYyMjBiNTE1MWJkOGUyZTFkNTQ4NGUzZjkyNzAiLCJpYXQiOjE3MDg4MTM5NjYuMTg2MjMxLCJuYmYiOjE3MDg4MTM5NjYuMTg2MjMzLCJleHAiOjE3NDA0MzYzNjYuMTgyMDI1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.qJ2iOMQRTWlNtQnRW2-fGpvpYxy5h-5usfLi_ZmpdORs7Hxi6g7yTfRq9zkom2aS2Mx5kt1xVSTKvrBucX6okKeol1_E6SkexAGrrFYzE9hyUE9QXETdoOSis4N4Hr59DeCfaicaFG6Jw80lT98qYvytjodsFIiktBXD3FMDJKVG-UkXvt7zvYuHb-UfXWwPj070DBKExW4NEsML314UsuxQOuYaMijhUgJr3_HkswW6bK5AYyIdNpVDJpV_4_ZfGeWqcI14Q3mnQQL0g-r-mBtIpWtwS5QaK3Qbz-LtN6-XBcBjKK6QqQCjffZXelfcZ6gBgXmXaW06smrXdMOQy-nKVkcrQksqpWkZmM3bgQNxFmNopK7-iEDQ70ligiEEDhB_FT7N4s-e2zBSj4pfjdJdQd4Van6dR_ShKosU6W3MXFWJMOM6TZ30mVOwgXxkLS2tAZADMrb2jrZgtcRrwyWAtr27lTbloSIL17H-mVqRiDksvkeiaQcScSREuzmSjKl6xqHL9lYm_BSRfgS7Ra7sx67zIIHd4jBqaow-qK2y8C2jm1eKpIXvqU6Xx2WMrMtuSlfhxMwer25Y2dTdbcR8spJu7zWsutcaAaGgWOLUChbXbok7_f8tl7yxtNVlnEC3eKYpewpUxGXtEb0Lc2W07K8kzsBF9cCR4u3alIM
 
 ### Logout
 
