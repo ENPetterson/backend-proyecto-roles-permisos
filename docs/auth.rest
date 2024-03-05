@@ -3,9 +3,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "name": "Roberto",
-    "email": "roberto@gmail.com",
-    "password": "roberto123"
+    "name": "Erick",
+    "email": "erick@gmail.com",
+    "password": "erick123"
 }
 
 ### Login con Sanctum

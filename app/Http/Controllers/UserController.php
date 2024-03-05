@@ -12,6 +12,13 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        /*
+        if(!$request->user()->can("listar_user")) {
+            abort(403);
+        }
+        */
+        $this->authorize("index_user");
+
         $limit = isset($request->limit)?$request->limit:10;
         $buscar = isset($request->q)?$request->q:null;
         if($buscar){
@@ -30,6 +37,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("store_user");
+
         $request->validate([
             "name" => "required",
             "email" => "required|email|unique:users",
@@ -50,6 +59,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
+        $this->authorize("show_user");
+
         $usuario = User::findOrFail($id);
 
         return response()->json($usuario, 200);
@@ -60,6 +71,8 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $this->authorize("update_user");
+
         $request->validate([
             "name" => "required",
             "email" => "required|email|unique:users,email,$id"
@@ -81,6 +94,8 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
+        $this->authorize("delete_user");
+
         $usuario = User::findOrFail($id);
         $usuario->delete();
 

@@ -40,3 +40,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource("role", RoleController::class);
 
 });
+
+Route::get("/no-autorizado", function(){
+    return response()->json(["message" => "Accion no autorizada"]);
+})->name("login");

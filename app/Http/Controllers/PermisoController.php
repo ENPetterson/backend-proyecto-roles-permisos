@@ -12,6 +12,8 @@ class PermisoController extends Controller
      */
     public function index()
     {
+        $this->authorize("index_permiso");
+
         $permisos = Permiso::get();
  
         return response()->json($permisos);
@@ -22,6 +24,8 @@ class PermisoController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("store_permiso");
+
         $request->validate([
             "nombre" => "required|unique:permisos"
         ]);
@@ -39,6 +43,8 @@ class PermisoController extends Controller
      */
     public function show(string $id)
     {
+        $this->authorize("show_permiso");
+
         $permiso = Permiso::findOrFail($id);
 
         return response()->json($permiso, 200);
@@ -49,6 +55,8 @@ class PermisoController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $this->authorize("update_permiso");
+
         $request->validate([
             "nombre" => "required|unique:permisos,nombre,$id"
         ]);
@@ -66,6 +74,8 @@ class PermisoController extends Controller
      */
     public function destroy(string $id)
     {
+        $this->authorize("delete_permiso");
+
         $permiso = Permiso::findOrFail($id);
         $permiso->delete();
 

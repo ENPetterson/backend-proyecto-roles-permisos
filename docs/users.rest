@@ -1,12 +1,12 @@
 GET http://127.0.0.1:8000/api/users
 Accept: application/json
-Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
+Authorization: Bearer 5|bgexbw4NQWLB6bNzGXW6PCFrlPyxyeKzMAR24q2o2bbb3513
 ### Guardar usuario
 
 POST http://127.0.0.1:8000/api/users
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
+Authorization: Bearer 5|bgexbw4NQWLB6bNzGXW6PCFrlPyxyeKzMAR24q2o2bbb3513
 
 {
     "name": "Juan",
@@ -18,7 +18,7 @@ Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
 
 GET http://127.0.0.1:8000/api/users/3
 Accept: application/json
-Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
+Authorization: Bearer 5|bgexbw4NQWLB6bNzGXW6PCFrlPyxyeKzMAR24q2o2bbb3513
 
 
 ### Modificar usuario
@@ -26,7 +26,7 @@ Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
 PUT http://127.0.0.1:8000/api/users/2
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
+Authorization: Bearer 5|bgexbw4NQWLB6bNzGXW6PCFrlPyxyeKzMAR24q2o2bbb3513
 
 {
     "name": "Juan Modificado",
@@ -38,4 +38,4 @@ Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
 
 DELETE http://127.0.0.1:8000/api/users/2
 Accept: application/json
-Authorization: Bearer 3|otpCmyCmN5AqpOKZRbglvgwXDfUXiyy71U8hiWIz7120e960
+Authorization: Bearer 5|bgexbw4NQWLB6bNzGXW6PCFrlPyxyeKzMAR24q2o2bbb3513

@@ -23,11 +23,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $p1 = new Permiso();
-        $p1->nombre = "listar_user";
+        $p1->nombre = "index_user";
         $p1->save();
 
         $p2 = new Permiso();
-        $p2->nombre = "guardar_user";
+        $p2->nombre = "store_user";
         $p2->save();   
 
         $r1 = new Role();
@@ -42,10 +42,20 @@ class DatabaseSeeder extends Seeder
         $r1->permisos()->attach([$p1->id, $p2->id]);
         $r2->permisos()->attach([$p1->id]);
 
-        $u1 = User::find(2);
+        $u1 = new User();
+        $u1->name = "demo";
+        $u1->email = "demo@gmail.com";
+        $u1->password = bcrypt("admin123");
+        $u1->save();
+
+        $u2 = new User();
+        $u2->name = "manolo";
+        $u2->email = "manolo@gmail.com";
+        $u2->password = bcrypt("manolo123");
+        $u2->save();
+
         $u1->assignRole($r1);
 
-        $u2 = User::find(1);
         $u2->assignRole($r2);
     }
 }
