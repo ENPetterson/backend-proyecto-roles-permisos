@@ -19,6 +19,18 @@ Content-Type: application/json
     "password": "admin123"
 }
 
+
+### Login con Sanctum 2
+
+POST http://127.0.0.1:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "manolo@gmail.com",
+    "password": "manolo123"
+}
+
 ### Login con Passport
 
 POST http://127.0.0.1:8000/api/passport/login
@@ -26,8 +38,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "roberto@gmail.com",
-    "password": "roberto123"
+    "email": "manolo@gmail.com",
+    "password": "manolo123"
 }
 
 ### Perfil con Sanctum
