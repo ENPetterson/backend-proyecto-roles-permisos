@@ -59,3 +59,31 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpI
 POST http://127.0.0.1:8000/api/v1/auth/logout
 Accept: application/json
 Authorization: Bearer 2|xaqAUASgYb9hEK76wrxKVYtx5oscHTTfhuf8KxdY8d82b023
+
+
+### Reset Password
+
+POST http://127.0.0.1:8000/api/reset-password
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "manolo@gmail.com"
+}
+
+### Reset Password Cambio
+
+
+POST http://127.0.0.1:8000/api/cambio-password
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "manolo@gmail.com",
+    "password": "manolo555",
+    "password_confirmation": "manolo555",
+    "token": "533a5dbaf04251298d65fda2b8f2a2ba9a2c4678636be943ae9b525d2425d7e4"
+}
+
+## 556953a04d6a793c5f2b6d5843c240e3470bbb977b15055b16bb0b39d57fc6ba
+

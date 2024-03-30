@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthPassportController;
 use App\Http\Controllers\PermisoController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -40,6 +41,9 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource("role", RoleController::class);
 
 });
+
+Route::post("reset-password", [ResetPasswordController::class, "recuperarPassword"]);
+Route::post("cambio-password", [ResetPasswordController::class, "resetPassword"]);
 
 Route::get("/no-autorizado", function(){
     return response()->json(["message" => "Accion no autorizada"]);
