@@ -29,6 +29,12 @@ class DatabaseSeeder extends Seeder
         $p0->subject = "all";
         $p0->save();
 
+        $p = new Permiso();
+        $p->nombre = "index_perfil";
+        $p->action = "index";
+        $p->subject = "perfil";
+        $p->save();
+
         $p1 = new Permiso();
         $p1->nombre = "index_user";
         $p1->action = "index";
@@ -58,10 +64,15 @@ class DatabaseSeeder extends Seeder
         $r3 = new Role();
         $r3->nombre = "gerente";
         $r3->save();  
+
+        $r4 = new Role();
+        $r4->nombre = "ventas";
+        $r4->save();  
         //Asignamos permisos a roles
-        $r1->permisos()->attach([$p0->id]);
-        $r2->permisos()->attach([$p1->id]);
-        $r3->permisos()->attach([$p1->id, $p2->id, $p3->id]);
+        $r1->permisos()->attach([$p0->id, $p->id]);
+        $r2->permisos()->attach([$p1->id, $p->id]);
+        $r3->permisos()->attach([$p1->id, $p2->id, $p3->id, $p->id]);
+        $r4->permisos()->attach([$p1->id, $p->id]);
 
         $u1 = new User();
         $u1->name = "demo";
@@ -75,9 +86,17 @@ class DatabaseSeeder extends Seeder
         $u2->password = bcrypt("manolo123");
         $u2->save();
 
+        $u3 = new User();
+        $u3->name = "ventas";
+        $u3->email = "maria@gmail.com";
+        $u3->password = bcrypt("maria123");
+        $u3->save();
+
         $u1->assignRole($r1);
 
         $u2->assignRole($r2);
         $u2->assignRole($r3);
+
+        $u3->assignRole($r4);
     }
 }
