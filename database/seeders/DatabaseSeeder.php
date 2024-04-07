@@ -53,6 +53,12 @@ class DatabaseSeeder extends Seeder
         $p3->subject = "user";
         $p3->save();  
 
+        $p4 = new Permiso();
+        $p4->nombre = "index_role";
+        $p4->action = "index";
+        $p4->subject = "role";
+        $p4->save();  
+
         $r1 = new Role();
         $r1->nombre = "super-admin";
         $r1->save();
@@ -71,7 +77,8 @@ class DatabaseSeeder extends Seeder
         //Asignamos permisos a roles
         $r1->permisos()->attach([$p0->id, $p->id]);
         $r2->permisos()->attach([$p1->id, $p->id]);
-        $r3->permisos()->attach([$p1->id, $p2->id, $p3->id, $p->id]);
+        $r3->permisos()->attach([$p1->id, $p2->id, $p3->id, $p->id, $p4->id]);
+
         $r4->permisos()->attach([$p1->id, $p->id]);
 
         $u1 = new User();

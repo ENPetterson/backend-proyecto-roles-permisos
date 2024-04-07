@@ -36,8 +36,11 @@ Route::get("/passport/profile", [AuthController::class, "funPerfil"])->middlewar
 
 Route::middleware('auth:sanctum')->group(function(){
 
+    //Permiso 
+    Route::get("permiso/paginacion", [PermisoController::class, "indexPaginacion"]);
+    
     Route::apiResource("users", UserController::class);
-    Route::apiResource("permisos", PermisoController::class);
+    Route::apiResource("permiso", PermisoController::class);
     Route::apiResource("role", RoleController::class);
 
 });
